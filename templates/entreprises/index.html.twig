@@ -12,6 +12,14 @@
     height: 12vh;
     margin-top:39% }
     .text_header{ float:Right;margin:2% 2% 0% 0%; }
+    .card{padding: 2rem 2rem 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 0 0 rgba(156,159,168,.3);
+    background-color: #fff;
+    cursor: pointer;
+    width: 60%;
+    height:30vh;
+    margin: 15% 0% 0% 18%;}
 </style>
 
 <div class="header">
@@ -24,8 +32,13 @@
 <div class="container" >
 
      {% for company in list %}
-        <div>
-            <strong>Company : </strong> {{ company.name }}
+        <div class="card">
+        <strong>Nom : </strong> {{ company.name }}
+         <strong>Numero de Siret : </strong> {{ company.numSiret }}
+            <strong>Nom : </strong> {{ company.name }}
+             <strong>Numero de Siren : </strong> {{ company.numSiren }}
+             <strong>Actitité : </strong> {{ company.activity }}
+             <strong>Adresse : </strong> {{ company.adress }}
             
         </div>
      {% endfor %}

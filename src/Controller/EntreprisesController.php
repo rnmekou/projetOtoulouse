@@ -34,6 +34,7 @@ class EntreprisesController extends AbstractController
 
         //Call for the companies saved in DB
         $results = $this->entrepriseService->getListEntreprise();
+
        
 /*      dump($entreprise);
         dump("result1"); 
