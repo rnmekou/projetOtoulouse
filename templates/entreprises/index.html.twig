@@ -46,6 +46,8 @@
     }
     .Right_block{
      width: 55%;
+    border-left: 1px solid #00205b;
+    padding: 2%;
     }
     .atribute{
         color: #737373!important
@@ -70,17 +72,43 @@
     display: block;
     outline: none;
     padding-inline-end: 40px;
-    width: 101%;
-    z-index: 2;
+    width: 100%;
     border-radius: 22px;
     box-sizing: border-box;
     font-size: 20px;
     opacity: 1;
-    position: relative;
     transition: none;
     height: 5vh;
     margin-top: 15%;
 }
+.search.icon {
+    color: #00205b;
+    position: absolute;
+    margin-top: 2%;
+    margin-left: 3%;
+    width: 12px;
+    height: 12px;
+    border: solid 1px currentColor;
+    border-radius: 100%;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+          
+}
+
+.search.icon:before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 5px;
+    height: 10px;
+    width: 1px;
+    background-color: currentColor;
+}
+.loup{
+    margin-top:1%
+}
+
+
 
 </style>
 
@@ -93,9 +121,10 @@
 </div>
 
 <div id="realbox-input-wrapper">
-        <div>
-        </div>
-        <input id="realbox" type="search" autocomplete="off" spellcheck="false" aria-live="polite" autofocus="" placeholder="Entrez un numero de SIRET ici">
+        
+        <div class="search icon loup"></div>
+       
+        <input id="realbox" type="search" autocomplete="off" spellcheck="false" aria-live="polite" autofocus="" placeholder="Entrez un numero de SIRET ">
       </div>
 
 <div class="container" >
@@ -103,7 +132,7 @@
      {% for company in list %}
         <div class="card">
         <div class="left_block">
-              <strong class="title">{{ company.name }} </strong> 
+              <strong class="title">{{ company.name }} </strong>
               <strong class="atribute">Numero de Siret : </strong> 
               <span> {{ company.numSiret }} </span> 
               <strong class="atribute">Numero de Siren : </strong> 
