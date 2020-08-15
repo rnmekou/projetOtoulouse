@@ -35,7 +35,8 @@ class EntrepriseService
 
             $response = $this->client->request('GET', 'https://societeinfo.com/app/rest/api/v2/companies.json?key=' . $this->apiKey.'&limit=25');
             $statusCode = $response->getStatusCode();
-            //dd($response);
+            //dump($response);
+         
 
             if ($statusCode == 404) {
                 throw new Exception('Nous ne trouvons aucun résultat, veuillez vérifier l\'orthographe de la ville et reessayez.');

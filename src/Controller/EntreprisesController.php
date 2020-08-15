@@ -29,7 +29,7 @@ class EntreprisesController extends AbstractController
        
 
         //Getting companies from the API and saving them in the dataBase if there are not already in
-        //$result = $this->entrepriseService->getEntreprise();
+       // $result = $this->entrepriseService->getEntreprise();
 
 
         //Call for the companies saved in DB
