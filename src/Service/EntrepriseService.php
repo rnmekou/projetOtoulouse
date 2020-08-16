@@ -85,12 +85,21 @@ class EntrepriseService
     public function getListEntreprise()
     {
 
-        // Get companies of our DB
+        // Get companies in our DB
         $records = $this->em->getRepository('App\Entity\Entreprise')->findAll();
         
         return $records;
+    }
 
 
+    /**
+     * @return array
+     */
+    public function getEntrepriseByNumSiret( string $numSiret)
+    {
+        // Get companies names in our DB
+        $records = $this->em->getRepository('App\Entity\Entreprise')->findOneBy(array('num_Siret' => $numSiret));
 
+        return $records;
     }
 }
