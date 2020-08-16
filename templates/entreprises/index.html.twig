@@ -15,17 +15,22 @@
 {% block body %}
 	<style>
 		.header {
-			background-color: #00205b;
-			width: 100%;
-			height: 12vh;
+			background-color: black;
+			width: 102%;
+			height: 10vh;
 			color: white;
-			padding-top: 1%
+			padding: 1%;
+			margin: -1% 0 0 -1%;
+
+			position: relative;
+			z-index: 999;
 		}
 		.footer {
-			background-color: #00205b;
-			width: 100%;
-			height: 12vh;
-			margin-top: 35%
+			background-color: black;
+			width: 102%;
+			height: 6vh;
+			margin-top: 39%;
+			margin-left: -1%;
 		}
 		.text_header {
 			float: Right;
@@ -43,12 +48,12 @@
 			margin: 5% 0 0 18%;
 			overflow: hidden;
 			display: flex;
-            position:absolute;
+			position: absolute;
 
 		}
 
 		.card:hover {
-			box-shadow: 3px 3px 3px 3px rgb(64 65 70 / 62%)
+			box-shadow: 3px 3px 3px 3px black
 		}
 		.title {
 			font-size: 24px;
@@ -79,12 +84,12 @@
 			margin: 0 auto;
 			max-width: 584px;
 			position: relative;
-			z-index: 0;
+			z-index: 999;
 
 		}
 		#search_bar_num_siret {
 			box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
-            text-align: center;
+			text-align: center;
 			background-color: var(--search-box-bg, white);
 			border: none;
 			color: var(--search-box-text);
@@ -98,6 +103,7 @@
 			transition: none;
 			height: 5vh;
 			margin-top: 15%;
+
 		}
 
 		.search.icon {
@@ -144,6 +150,321 @@
 			border-bottom: 4px solid #ffffff;
 			padding: 6px 0;
 		}
+		.h1.main,
+		p.demos {
+			-webkit-animation-delay: 15s;
+			-moz-animation-delay: 15s;
+			-ms-animation-delay: 15s;
+			animation-delay: 15s;
+		}
+		.sp-container {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 0;
+		}
+		.sp-content {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			z-index: 1000;
+		}
+		.sp-container h2 {
+			position: absolute;
+			top: 50%;
+			line-height: 100px;
+			height: 90px;
+			margin-top: -50px;
+			font-size: 90px;
+			width: 100%;
+			text-align: center;
+			color: transparent;
+			-webkit-animation: blurFadeInOut 3s ease-in backwards;
+			-moz-animation: blurFadeInOut 3s ease-in backwards;
+			-ms-animation: blurFadeInOut 3s ease-in backwards;
+			animation: blurFadeInOut 3s ease-in backwards;
+		}
+		.sp-container h2.frame-1 {
+			-webkit-animation-delay: 0s;
+			-moz-animation-delay: 0s;
+			-ms-animation-delay: 0s;
+			animation-delay: 0s;
+		}
+		.sp-container h2.frame-2 {
+			-webkit-animation-delay: 3s;
+			-moz-animation-delay: 3s;
+			-ms-animation-delay: 3s;
+			animation-delay: 3s;
+		}
+		.sp-container h2.frame-5 {
+			-webkit-animation: none;
+			-moz-animation: none;
+			-ms-animation: none;
+			animation: none;
+			color: transparent;
+			text-shadow: 0 0 1px #130101;
+		}
+		.sp-container h2.frame-5 span {
+			-webkit-animation: blurFadeIn 3s ease-in 6s backwards;
+			-moz-animation: blurFadeIn 1s ease-in 6s backwards;
+			-ms-animation: blurFadeIn 3s ease-in 6s backwards;
+			animation: blurFadeIn 3s ease-in 6s backwards;
+			color: transparent;
+			text-shadow: 0 0 1px #130101;
+		}
+		.sp-container h2.frame-5 span:nth-child(2) {
+			-webkit-animation-delay: 7s;
+			-moz-animation-delay: 7s;
+			-ms-animation-delay: 7s;
+			animation-delay: 7s;
+		}
+		.sp-container h2.frame-5 span:nth-child(3) {
+			-webkit-animation-delay: 8s;
+			-moz-animation-delay: 8s;
+			-ms-animation-delay: 8s;
+			animation-delay: 8s;
+		}
+		.sp-globe {
+			position: absolute;
+			width: 282px;
+			height: 273px;
+			left: 50%;
+			top: 50%;
+			margin: -137px 0 0 -141px;
+			background: transparent url('http://web-sonick.zz.mu/images/sl/globe.png') no-repeat top left;
+			-webkit-animation: fadeInBack 1.6s linear 9s backwards;
+			-moz-animation: fadeInBack 1.6s linear 9s backwards;
+			-ms-animation: fadeInBack 1.6s linear 9s backwards;
+			animation: fadeInBack 1.6s linear 9s backwards;
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+			filter: alpha(opacity=30);
+			opacity: 0.3;
+			-webkit-transform: scale(2);
+			-moz-transform: scale(2);
+			-o-transform: scale(2);
+			-ms-transform: scale(2);
+			transform: scale(2);
+		}
+		.sp-circle-link {
+			position: absolute;
+			text-decoration: none;
+			left: 50%;
+			bottom: 100px;
+			margin-left: -50px;
+			text-align: center;
+			line-height: 100px;
+			width: 100px;
+			height: 100px;
+			background: #fff;
+			color: #3f1616;
+			font-size: 25px;
+			-webkit-border-radius: 50%;
+			-moz-border-radius: 50%;
+			border-radius: 50%;
+			-webkit-animation: fadeInRotate 1s linear 10s backwards;
+			-moz-animation: fadeInRotate 1s linear 10s backwards;
+			-ms-animation: fadeInRotate 1s linear 10s backwards;
+			animation: fadeInRotate 1s linear 10s backwards;
+			-webkit-transform: scale(1) rotate(0deg);
+			-moz-transform: scale(1) rotate(0deg);
+			-o-transform: scale(1) rotate(0deg);
+			-ms-transform: scale(1) rotate(0deg);
+			transform: scale(1) rotate(0deg);
+		}
+		.sp-circle-link:hover {
+			background: #130101;
+			color: #fff;
+		}
+		/**/
+
+		@-webkit-keyframes blurFadeInOut {
+			0% {
+				opacity: 0;
+				text-shadow: 0 0 40px #130101;
+				-webkit-transform: scale(1.3);
+			}
+			20%,
+			75% {
+				opacity: 1;
+				text-shadow: 0 0 1px #130101;
+				-webkit-transform: scale(1);
+			}
+			100% {
+				opacity: 0;
+				text-shadow: 0 0 50px #130101;
+				-webkit-transform: scale(0);
+			}
+		}
+		@-webkit-keyframes blurFadeIn {
+			0% {
+				opacity: 0;
+				text-shadow: 0 0 40px #130101;
+				-webkit-transform: scale(1.3);
+			}
+			50% {
+				opacity: 0.5;
+				text-shadow: 0 0 10px #130101;
+				-webkit-transform: scale(1.1);
+			}
+			100% {
+				opacity: 1;
+				text-shadow: 0 0 1px #130101;
+				-webkit-transform: scale(1);
+			}
+		}
+		@-webkit-keyframes fadeInBack {
+			0% {
+				opacity: 0;
+				-webkit-transform: scale(0);
+			}
+			50% {
+				opacity: 0.4;
+				-webkit-transform: scale(2);
+			}
+			100% {
+				opacity: 0.2;
+				-webkit-transform: scale(5);
+			}
+		}
+		@-webkit-keyframes fadeInRotate {
+			0% {
+				opacity: 0;
+				-webkit-transform: scale(0) rotate(360deg);
+			}
+			100% {
+				opacity: 1;
+				-webkit-transform: scale(1) rotate(0deg);
+			}
+		}
+		/**/
+
+		@-moz-keyframes blurFadeInOut {
+			0% {
+				opacity: 0;
+				text-shadow: 0 0 40px #130101;
+				-moz-transform: scale(1.3);
+			}
+			20%,
+			75% {
+				opacity: 1;
+				text-shadow: 0 0 1px #130101;
+				-moz-transform: scale(1);
+			}
+			100% {
+				opacity: 0;
+				text-shadow: 0 0 50px #130101;
+				-moz-transform: scale(0);
+			}
+		}
+		@-moz-keyframes blurFadeIn {
+			0% {
+				opacity: 0;
+				text-shadow: 0 0 40px #130101;
+				-moz-transform: scale(1.3);
+			}
+			100% {
+				opacity: 1;
+				text-shadow: 0 0 1px #130101;
+				-moz-transform: scale(1);
+			}
+		}
+		@-moz-keyframes fadeInBack {
+			0% {
+				opacity: 0;
+				-moz-transform: scale(0);
+			}
+			50% {
+				opacity: 0.4;
+				-moz-transform: scale(2);
+			}
+			100% {
+				opacity: 0.2;
+				-moz-transform: scale(5);
+			}
+		}
+		@-moz-keyframes fadeInRotate {
+			0% {
+				opacity: 0;
+				-moz-transform: scale(0) rotate(360deg);
+			}
+			100% {
+				opacity: 1;
+				-moz-transform: scale(1) rotate(0deg);
+			}
+		}
+		/**/
+
+		@keyframes blurFadeInOut {
+			0% {
+				opacity: 0;
+				text-shadow: 0 0 40px #130101;
+				transform: scale(1.3);
+			}
+			20%,
+			75% {
+				opacity: 1;
+				text-shadow: 0 0 1px #130101;
+				transform: scale(1);
+			}
+			100% {
+				opacity: 0;
+				text-shadow: 0 0 50px #130101;
+				transform: scale(0);
+			}
+		}
+		@keyframes blurFadeIn {
+			0% {
+				opacity: 0;
+				text-shadow: 0 0 40px #130101;
+				transform: scale(1.3);
+			}
+			50% {
+				opacity: 0.5;
+				text-shadow: 0 0 10px #130101;
+				transform: scale(1.1);
+			}
+			100% {
+				opacity: 1;
+				text-shadow: 0 0 1px #130101;
+				transform: scale(1);
+			}
+		}
+		@keyframes fadeInBack {
+			0% {
+				opacity: 0;
+				transform: scale(0);
+			}
+			50% {
+				opacity: 0.4;
+				transform: scale(2);
+			}
+			100% {
+				opacity: 0.2;
+				transform: scale(5);
+			}
+		}
+		@keyframes fadeInRotate {
+			0% {
+				opacity: 0;
+				transform: scale(0) rotate(360deg);
+			}
+			100% {
+				opacity: 1;
+				transform: scale(1) rotate(0deg);
+			}
+		}
+		.error {
+			text-align: center;
+			font-size: 31px;
+			margin-top: 9%;
+			position: absolute;
+			margin-left: 15%;
+			width: 70%;
+		}
 	</style>
 
 	<div class="header">
@@ -151,27 +472,39 @@
 			Nadia Search Engine
 		</span>
 		<span class="text_header">
-			<a href="https://portolionadia.herokuapp.com/#/" class="a" target="_blank">ABOUT ME</a>
+			<a href="https://portolionadia.herokuapp.com/#/" class="a" target="_blank">A PROPOS DE MOI</a>
 		</span>
 		<span class="text_header">
 
-			<a class="a" href="{{path('Home')}}">HOME</a>
+			<a class="a" href="{{path('Home')}}">ACCEUIL</a>
 		</span>
 
 	</div>
 
-<div id="realbox-input-wrapper">
-        
-     <div class="search icon loup"></div>
-     {{form_start(searchBarForm) }}
-     {{form_widget(searchBarForm.num_siret)}}
-     {{ form_end(searchBarForm) }}     
-     </div>
-     
+	<div id="realbox-input-wrapper">
+
+		<div class="search icon loup"></div>
+		{{form_start(searchBarForm) }}
+		{{form_widget(searchBarForm.num_siret)}}
+		{{ form_end(searchBarForm) }}
+	</div>
+
 	<div class="container">
 
 		{% if value == 0 %}
-			<div>Message</div>
+			<div class="sp-container">
+				<div class="sp-content">
+					<div class="sp-globe"></div>
+					<h2 class="frame-1">Bienvenu</h2>
+					<h2 class="frame-2">Chez NSE</h2>
+					<h2 class="frame-5">
+						<span>Nadia</span>
+						<span>Search</span>
+						<span>Engine</span>
+					</h2>
+					<a class="sp-circle-link" href="https://portolionadia.herokuapp.com/#/">by Nadia</a>
+				</div>
+			</div>
 
 		{% endif  %}
 
@@ -208,15 +541,15 @@
 		{% endif %}
 
 		{% if value == 3 %}
-			<div>Message Erreur</div>
+			<div class="error">
+				Le numero de Siret que vous avez rentré ne correspond à aucune entreprise dans notre Base de Donnée!!
+                </div>
 
 		{% endif %}
 
 
 	</div>
-	<div class="footer">
-		mama
-	</div>
+	<div class="footer"></div>
 {% endblock %}
 {% block javascripts %}
 

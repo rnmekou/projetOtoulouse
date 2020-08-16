@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controller;
+
 use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\Entreprise;
 use App\Service\EntrepriseService;
@@ -12,7 +13,7 @@ use Doctrine\Common\Collections\Expr\Value;
 
 class EntreprisesController extends AbstractController
 {
-        private $entrepriseService;
+    private $entrepriseService;
 
     public function __construct(entrepriseService $entreprise)
     {
@@ -20,68 +21,54 @@ class EntreprisesController extends AbstractController
     }
 
     /**
-    * @Route("/", name="entreprises")
-    */
+     * @Route("/", name="entreprises")
+     */
     public function index(Request $request)
     {
 
-        $numSiret="";
+        $numSiret = "";
         $result1 =  null;
 
         $value = 0;
-        
-        $searchForm= $this->createForm(SearchBarType::class);
+
+        $searchForm = $this->createForm(SearchBarType::class);
 
         $searchForm->handleRequest($request);
 
-        if($searchForm->isSubmitted() && $searchForm->isValid()){
+        if ($searchForm->isSubmitted() && $searchForm->isValid()) {
 
-            $data= $searchForm->getData();
+            $data = $searchForm->getData();
 
-            $numSiret=$data['num_siret'];
+            $numSiret = $data['num_siret'];
             $result1 = $this->entrepriseService->getEntrepriseByNumSiret($numSiret);
-            
-            if($result1){
-                $value= 2;
-            }
-            else{
-                $value =3;
+
+            if ($result1) {
+                $value = 2;
+            } else {
+                $value = 3;
             }
         }
 
 
 
 
-        /*$entreprise->setNumSiret('99999');
-        $entreprise->setName('nadia');
-        $entreprise->setNumSiren('99999');
-        $entreprise->setAdress('iuiytrtetyrui');
-        $entreprise->setActivity('21/O6/2020');
-        */
-       
-
         //Getting companies from the API and saving them in the dataBase if there are not already in
-       // $result = $this->entrepriseService->getEntreprise();
+        //$result = $this->entrepriseService->getEntreprise();
 
 
         //Call for the companies saved in DB
         $results = $this->entrepriseService->getListEntreprise();
 
-        
-       dump($result1);
-       
-/*      dump($entreprise); 
-        dump("result1"); 
-        dump($result);*/
+
+        //dump($result1);
+
+
         return $this->render('entreprises/index.html.twig', [
             'controller_name' => 'EntreprisesController',
             'list' => $results,
-            'searchBarForm' =>$searchForm->createView(),
+            'searchBarForm' => $searchForm->createView(),
             'entreprise' => $result1,
             'value' => $value
         ]);
-        
     }
-
-    
 }
